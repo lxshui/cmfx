@@ -1528,8 +1528,8 @@ function sp_get_routes($refresh=false){
 	}
 
 	$route_file=$route_dir."route.php";
-
-	file_put_contents($route_file, "<?php\treturn " . stripslashes(var_export($all_routes, true)) . ";");
+	$all['URL_ROUTE_RULES']=$all_routes;
+	file_put_contents($route_file, "<?php\treturn " . stripslashes(var_export($all, true)) . ";");
 
 	return $cache_routes;
 
